@@ -1,0 +1,386 @@
+/* ================================================================= */
+/* Global [Admin Section] ++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    scroll-behavior: smooth;
+    
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+
+/* ================================================================= */
+/* Admin login and Change password page ++++++++++++++++++++++++++++ */
+/* ================================================================= */
+
+/* ovin gases logo */
+.logo{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    border-top: 5px solid rgba(102, 211, 81, 0.918);
+    border-radius: 75px;
+}
+
+.logo img{
+    width: 150px;
+}
+
+.loginMainCon{
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.formCon{
+    width: 70vw;
+    height: 500px;
+    text-align: center;
+    background-color: rgba(128, 128, 128, 0.192);
+    position: relative;
+    top: 100px;
+    margin: 0 auto;
+    padding-top: 50px;
+    border-radius: 30px;
+    box-shadow: 2px 2px 20px rgba(255, 255, 255, 0.356);
+}
+
+.loginInput h1{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: rgb(40, 201, 75);
+}
+
+.loginInput{
+    margin-top: 50px;
+    
+}
+
+.tbInput{
+    width: 50vw;
+    height: 50px;
+    padding: 2px 15px;
+    font-size: 1.3rem;
+    background-color: transparent;
+    border: 0;
+    color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgb(40, 201, 75);
+
+}
+
+.tbInput:focus{
+    outline: none;
+}
+
+#login{
+    border: 2px solid rgb(40, 201, 75);
+    background-color: rgba(40, 201, 75, 0.301);
+    transition: 1s;
+    margin-top: 30px;
+    color: rgb(255, 255, 255);
+}
+
+#login:hover{
+    background-color:rgb(40, 201, 75);
+    transition: 1s;
+    letter-spacing: 1rem;
+}
+
+
+
+
+/* ##########PAGE BREAKE########## */
+/* ================================================================= */
+/* Change Password page ++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#lgMainCon{
+    background-image: url('../Images/Background/login.jpg');
+}
+
+/* ##########PAGE BREAKE########## */
+/* ================================================================= */
+/* Change Password page ++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#cpLogo{
+    padding-top: 30px;
+    padding-left: 20px;
+    top: 15px;
+}
+
+#cpLogo img{
+    width: 120px;
+    /* background-color: aqua; */
+}
+
+#cpMainCon{
+    box-sizing: border-box;
+    width: 100vw;
+    height: 130vh;
+    background-image: url('../Images/Background/changePassword.jpg');
+}
+
+#cpFormCon{
+    height: 700px;
+}
+
+/* ##########PAGE BREAKE########## */
+/* ================================================================= */
+/* Admin panel page ++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+
+#adminPanelBody{
+    background-color: rgba(44, 53, 52, 0.699);
+}
+
+/* Header Section */
+.header{
+    width: 100vw;
+    display: grid;
+    grid-template-areas: 'ovinlogo middle middle user';
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+#ovinlogo{
+    grid-area: ovinlogo;
+}
+
+.ovinlogo img{
+    width: 100px;
+}
+
+#middle{
+    grid-area: middle;
+    padding-top: 3vw;
+}
+
+#middle h1{
+    font-size: 3rem;
+    color: rgb(190, 241, 243);
+}
+
+#middle h2{
+    font-size: 2em;
+    color: rgba(190, 241, 243, 0.466);
+    letter-spacing: 0.5rem;
+}
+
+#user{
+    grid-area: user;
+    padding-right: 3vw;
+    padding-top: 1vh;
+}
+
+.userItem{
+    border: 2px solid;
+    margin-bottom: 15px;
+    padding: 10px 5px;
+    border-radius: 15px;
+    max-width: 110px;
+    background-color:  rgba(106, 216, 231, 0.329);
+    transition: 4s ease;
+}
+
+.userItem:hover{
+    box-shadow: -5px 5px 10px rgb(27, 27, 27);
+    transform: translate(5px,-5px);
+    transition:  1s ease;
+
+
+}
+
+.userIcon img{
+    width: 50px;
+}
+
+/* end of Header Section */
+
+
+
+/* body Section */
+.bodySec{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* background-color: rgb(39, 37, 37); */
+    width: 100vw;
+    height: auto;
+}
+
+/* filter */
+#from{
+    grid-area: from;
+    /* background-color: aliceblue; */
+}
+#to{
+    grid-area: to;
+    /* background-color: aqua; */
+}
+#sbmit{
+    grid-area: submit;
+    text-align: center;
+}
+#itemFound{
+    grid-area: itemFound;
+    /* background-color: rgb(43, 247, 16); */
+}
+
+.filter{
+    /* height: 500px; */
+    width: 80vw;
+    margin: 50px auto;
+    display: grid;
+    grid-template-areas: 'from to'  'submit itemFound';
+    
+}
+
+.filterItem{
+    padding: 15px 20px;
+    border: 1px solid rgb(111, 170, 145);
+
+}
+
+.date{
+    margin-left: 50px;
+    background-color: rgb(103, 148, 140);
+}
+
+#submit{
+    /* border: 2px solid white; */
+    padding: 5px 10px;
+    width: 150px;
+    background-color: rgb(105, 236, 236);
+    border-radius: 100px;
+    border: none;
+    text-transform: uppercase;
+    transition: 1s ease;
+    font-weight: 500;
+    font-size: 1rem;
+    border: 2px solid rgba(105, 236, 236, 0.705);
+
+}
+
+#submit:hover{
+    box-shadow: 1px 1px 10px rgba(105, 236, 236, 0.705);
+    transition: 1s ease;
+    border:2px solid rgb(65, 92, 94);
+}
+
+#itemFound{
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+/* .filterItem  */
+
+/* end of filter */
+
+.suggSec{
+    height: Auto;
+}
+
+/* suggestion table */
+table{
+    border-collapse: collapse;
+    width: 90vw;
+    margin: 50px auto;
+    text-align: center;
+}
+
+table tr:nth-child(even){
+    background-color: rgba(139, 238, 241, 0.219);
+
+}
+
+th,td{
+    border: 2px solid black;
+    padding: 20px 5px;
+    word-wrap: wrap;
+    width: 10vw;
+}
+
+th{
+    text-transform: uppercase;
+    background-color: rgba(128, 241, 134, 0.514);
+}
+
+#thEmail{
+    width: 15vw;
+}
+
+#thSuggestion{
+    width: 25vw;
+}
+
+.tdEmail{
+    text-transform: lowercase;
+}
+
+
+/* end of suggestion table */
+
+
+
+
+
+
+
+/* end of body Section */
+
+
+
+
+/* ================================================================= */
+/* media quary for pc ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+
+@media screen and (min-width:1200px) {
+
+    /* login and change password page */
+    .formCon{
+        width: 50vw;
+    }
+
+    .tbInput{
+        width: 30vw;
+    }
+    /* end of login and change password page */
+
+
+    /* admin Panel page */
+    /* .filter{
+        width: 90vw;
+        grid-template-areas: 'from to'
+         'c7 c7 submit submit itemFound itemFound'  ;
+
+    } */
+    
+    /* end of admin Panel page */
+}
+
+
+/* ================================================================= */
+/* media quary for mobile ++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+
+@media screen and (max-width:400px) {
+    /* admin Panel page */
+    .header{
+        width: 100vw;
+        /* height: 150px; */
+        grid-template-areas: 'ovinlogo user' 'middle middle ';
+        
+        
+    }
+
+    /* end of admin Panel page */
+}
+    

@@ -1,0 +1,843 @@
+/* ================================================================= */
+/* css for whole file ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 15px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    background-color: rgb(39, 37, 37);
+    z-index: -1;
+    scroll-behavior: smooth;
+}
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+p{
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px;
+    color: rgb(132, 132, 235);
+    margin-bottom: 15px;
+    font-family: cursive;
+    font-weight: 50;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+
+.btn{
+    display: inline-block;
+    padding: 8px 15px;
+    color: #ffffff;
+    background-color: transparent;
+    border: 2px solid #00ffff;
+    font-size: 15px;
+    letter-spacing: 3px;
+    transition:  background-color 1s ease;
+    text-decoration: none;
+    position: absolute;
+    right: 50px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.btn:hover{
+    color: #ffffff;
+    background-color: #00ffffc2;
+    transition:  background-color 1s ease;
+}
+
+.btn:focus{
+    outline: none;
+}
+
+.brand h1{
+    font-size: 45px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-family: cursive;
+    letter-spacing: .5px;
+    font-weight: 800;
+}
+.brand h1 span{
+    color: #00ffff;
+}
+.brand h2{
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.brand h2 span{
+    color: #00ffff;
+}
+
+.section-title {
+    font-size: 50px;
+    font-weight: 1000;
+    color: rgb(245, 237, 237);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: .3rem;
+    text-align: center;
+}
+
+.section-title span{
+    color: #00ffff;
+}
+
+.container{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    min-height: 600px;
+    z-index: 1;
+}
+
+/* ================================================================= */
+/* header Section css ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#header{
+    text-align: center;
+}
+
+#header{
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: auto;
+}
+
+#header .header{
+    min-height: 8vh;
+    background-color: rgba(31, 30, 30, 0.24);
+    transition: .5s ease background-color;
+}
+
+#header .nav-bar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    max-width: 1300px;
+    padding: 0 10px;
+}
+ 
+#header .nav-list ul{
+    list-style: none;
+    position: absolute;
+    background-color: #262526;
+    width: 100vw;
+    height: 100vh;
+    left: 100%;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    overflow-x: hidden;
+    transition: .6s ease left;
+}
+
+#header .nav-list ul.active{
+    left: 0;
+}
+
+#header .nav-list ul a{
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: .2rem;
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 20px;
+    display: block;
+}
+
+#header .nav-list ul a:hover{
+    color: #00ffff;
+}
+
+#header .nav-list ul a::after{
+    content:attr(data-after);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    color: rgba(63, 61, 61, 0.24);
+    font-size: 5rem;
+    letter-spacing: 50px;
+    z-index: -1;
+    transition: 1s ease letter-spacing;
+}
+
+#header .nav-list ul li:hover a::after{
+    transform: translate(-50%,-50%) scale(1);
+    letter-spacing: initial;
+}
+
+#header .hamburger{
+    height: 60px;
+    width: 60px;
+    display: inline-block;
+    border: 3px solid #00ffff;
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    cursor: pointer;
+    transform: scale(.8);
+    margin-right: 50px;
+    
+}
+
+#header .hamburger::after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    border-radius: 50px;
+    border: 3px solid #5ad4d4;
+    animation: hamburger_puls 1s ease infinite;
+}
+
+#header .hamburger .bar{
+    height: 2px;
+    width: 30px;
+    position: relative;
+    background-color: #00ffff;
+    z-index: -1;
+}
+
+#header .hamburger .bar::after,
+#header .hamburger .bar::before{
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    background-color: #00ffff;
+    transition: .3s ease;
+    transition-property: top,bottom;
+}
+
+#header .hamburger .bar::after{
+    top: 8px;
+}
+
+#header .hamburger .bar::before{
+    bottom: 8px;
+}
+
+#header .hamburger.active .bar{
+    height: 4px;
+}
+
+#header .hamburger.active .bar::after{
+    top: 0;
+}
+
+#header .hamburger.active .bar::before{
+    bottom: 0;
+}
+
+/* ================================================================= */
+/* hero Section css ++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#hero{
+    background-image: url('../Images/Background/IndexBackground.jpg');
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+    z-index: -1;
+    height: 800px;
+}
+
+#hero::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #262526;
+    opacity: .3;
+}
+
+#hero .hero{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+#hero h1{
+    top: 250px;
+    left: 0;
+    display: block;
+    width: fit-content;
+    font-size: 55px;
+    position: relative;
+    color:transparent;
+    animation: text_reveal .5s ease forwards;
+    animation-delay: 1s;  
+}
+
+#hero h1:nth-child(1){
+    animation-delay: 1s;
+}
+#hero h1:nth-child(2){
+    animation-delay: 2s;
+}
+#hero h1:nth-child(3){
+
+    animation-delay: 3s;
+}
+
+#hero h1 span{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: #00ffff;
+    animation: text_reveal_box 1s ease;
+    animation-delay: .5s;
+}
+
+#hero h1:nth-child(1) span{
+    animation-delay: .5s;
+}
+#hero h1:nth-child(2) span{
+    animation-delay: 1.5s;
+}
+#hero h1:nth-child(3) span{
+    animation-delay: 2.5s;
+}
+
+
+/* ================================================================= */
+/* product Section css +++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#product .product{
+    flex-direction: column;
+    text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0;
+}
+
+#product .product-bottom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#product .product-item{
+    flex-basis: 80%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 15px;
+    background-image: url('../Images/Background/ProductBackground.jpg');
+    background-size: cover;
+    margin: 10px 5%;
+    color: blanchedalmond;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    min-height: 550px;
+    border: 1px solid #00ffff;
+}
+
+#product .product-item::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: .6;
+    z-index: -1;
+}
+
+#product .product-bottom .icon{
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+#product .product-item h2{
+    font-size: 35px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    color: rgb(82, 185, 82);
+}
+
+#product .product-item p{
+    font-size: 22px;
+    text-align: left;
+    line-height: 30px;
+    color: rgb(132, 132, 235);
+}
+
+#product .product-item{
+    transition: 3s ease transform;
+}
+
+#product .product-item:hover{
+    z-index: 5;
+    transform: scale(1.1);
+    transition: 3s ease transform;
+}
+
+/* ================================================================= */
+/* about us Section css ++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#about p{
+    padding-left:10% ;
+    padding-right:10% ;
+}
+
+
+/* ================================================================= */
+/* contact us Section css ++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#contact .contact{
+    flex-direction: column;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#contact .contact .icon{
+    width: 70px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#contact .contact-item{
+    width: 300px;
+    height: 200px;
+}
+
+#contact .contact-item{
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    margin: 20px 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0px 0px 4px 0 #7ed6ca;
+    transition: .3s ease box-shadow;
+}
+
+#contact .contact-item:hover{
+    box-shadow: 0px 0px 2px 0 #7ed6ca;
+}
+
+#contact .contact-info h1{
+    color: rgb(132, 132, 235);
+    font-size: 25px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+#contact .contact-info h2{
+    color: rgb(132, 132, 235);
+    font-size: 15px;
+    font-weight: 400;
+}
+
+
+/* ================================================================= */
+/* footer Section css ++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#footer{
+    background-color: #141414;
+}
+
+#footer .footer{
+    min-height: 200px;
+    flex-direction: column;
+    padding-top: 50px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#footer label{
+    color: rgb(73, 90, 90);
+}
+
+#footer .social-icon{
+    display: flex;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+#footer .social-item{
+    height: 50px;
+    width: 50px;
+    margin: 0 18px;
+}
+
+.adminLogin a{
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    margin-bottom : 20px;
+    border: 5px solid #7ed6ca;
+    padding: 10px 70px;
+    /* padding-bottom: 30px; */
+    border-radius: 25px;
+    color: #b7d67e;
+    letter-spacing: 5px;
+    transition: 1s ease;
+}
+
+.adminLogin a:hover{
+    box-shadow: 2px -2px 30px #7ed6ca2d;
+    transition: 1s ease;
+}
+
+/* ================================================================= */
+/* Animation Section css +++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+@keyframes hamburger_puls{
+    0%{
+        opacity: 1;
+        transform: scale(1);
+    }
+    100%
+    {
+        opacity: 0;
+        transform: scale(1.3);
+    }
+}
+
+@keyframes text_reveal_box{
+    50%{
+        width: 100%;
+        left: 0;
+    }
+    100%{
+        width: 0;
+        left: 100%;
+    }
+}
+@keyframes text_reveal{
+    100%{
+        color:  #00ffff;
+    }
+}
+
+
+/* ================================================================= */
+/* media quary for tablet ++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+@media only screen and (min-width: 750px){
+    p{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    /* ====================================================+======== */
+    /* product section */
+    #product .product .product-item{
+        flex-basis: 45%;
+        margin: 5px;
+        min-height: 730px;
+    }
+
+    /* ====================================================+======== */
+    /* contact section */
+    #contact .contact{
+        display: flex;
+        flex-direction: column;
+        padding: 100px 0px;
+        align-items: center;
+        justify-content: center;
+        min-width: 200px;
+    }
+
+    #contact .contact-item{
+        width: 30%;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #contact .contact-item{
+        width: 65%;
+        margin-top: 1vh;
+        display: flex;
+        flex-direction: row;
+    }
+
+    #contact .contact .contact-item{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #contact .contact-item .icon{
+        width: 100px; 
+    }
+
+    #contact .contact-item .icon img{
+        object-fit: contain;
+    } 
+    
+    #contact .contact-item .contact-info{
+        width: 100%;
+        text-align: left;
+        padding-left: 20px;
+    }
+
+}
+
+/* ================================================================= */
+/* media quary for pc ++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+@media only screen and (min-width:1200px){
+    /* *{
+        background-color: #ffffff;
+    } */
+    
+    p{
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+
+    /* ====================================================+======== */
+    /* header section */
+    #header .hamburger{
+        display: none;
+    }
+    
+    #header .nav-list ul{
+        position: initial;
+        display: block;
+        height: auto;
+        width: fit-content;
+        background-color: transparent;
+    }
+
+
+    #header .nav-list ul li{
+        display: inline-block;
+    }
+
+    #header .nav-list ul li a{
+        font-size: 1.6rem;
+    }
+
+    #header .nav-list ul a::after{
+        display: none;
+    }
+
+    /* ====================================================+======== */
+    /* product section */
+    #product .product .product-item{
+        flex-basis: 30%;
+        margin: 5px;
+        min-height: 730px;
+    }
+
+    .pp_Hero{
+        height: fit-content;
+    }
+
+
+}
+
+
+/* ##########PAGE BREAKE########## */
+/* ================================================================= */
+/* for all production page content +++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+.pp_Hero{
+    background-color: rgb(73, 90, 90);
+    background-size: cover;
+    background-position: top center;
+    height: 750px;
+    width: 100%;
+    border-radius: 500px;
+    position: relative;
+}
+
+#content{
+    width: 100%;
+    height: fit-content;
+    background-color: rgb(39, 37, 37);
+    position: relative;
+    margin-bottom: 100px;
+}
+
+#content .content .secHeader{
+    margin-top: 100px;
+    margin-bottom: 40px;
+}
+
+.content-sub-header{
+    font-size: 1.3rem;
+    color: #ffffff;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+.content-sub-header span{
+    color: #00ffff;
+}
+
+/* ##########PAGE BREAKE########## */
+/* ================================================================= */
+/* o2 page +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+/* hero section */
+#o2Hero{
+    background-image: url('../Images/Background/O2.jpg');
+}
+
+/* content section */
+
+
+/* ##########PAGE BREAKE########## */
+/* ================================================================= */
+/* N2 page +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#n2Hero{
+    background-image: url('../Images/Background/N2.jpg');
+}
+
+ /* ##########PAGE BREAKE########## */
+/* ================================================================= */
+/* Ar page +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#ArHero{
+    background-image: url('../Images/Background/Ar.jpg');
+}
+
+/* ##########PAGE BREAKE########## */
+/* ================================================================= */
+/* da page +++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#daHero{
+    background-image: url('../Images/Background/DA.jpg');
+}
+
+/* ##########PAGE BREAKE########## */
+/* ================================================================= */
+/* co2 page ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#co2Hero{
+    background-image: url('../Images/Background/CO2.jpg');
+}
+
+/* ##########PAGE BREAKE########## */
+/* ================================================================= */
+/* mox page ++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#moxHero{
+    background-image: url('../Images/Background/MOX.jpg');
+ }
+
+/* ##########PAGE BREAKE########## */
+/* ================================================================= */
+/* Suggection page +++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ================================================================= */
+#SuggHero{
+    background-image: url('../Images/Background/Suggection.jpg');
+ }
+
+.suggestion-form{
+    background-color: #3f3e3e;
+    width: 75vw;
+    padding: 60px 10vw;
+    margin:50px auto;
+    border-radius: 15px;
+    box-shadow: 1px 1px 5px #476268e1;
+    transition: box-shadow 3s ease;
+    
+}
+
+.suggestion-form:hover{
+    box-shadow: 1px 1px 30px #476268e1;
+    transition: box-shadow 3s ease;
+}
+
+.inputField{
+    width: 55vw;
+    height: 50px;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 3px solid #00ffdd;
+    border-left: 3px solid #00ffdd;
+    transition: border 2s ease;
+}
+
+.inputField:focus{
+    border-bottom: 3px solid #030303;
+    border-left: 3px solid #0a0a0a;
+    outline: none;
+    transition: border 2s ease;
+    background-color: #cacfcffa;
+}
+
+#suggection{
+    height: 150px;
+    resize: none;
+}
+
+.suggestion-form label{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: rgba(183, 188, 189, 0.829);
+    padding-left: 2vw;
+}
+
+#reset{
+    position: relative;
+    margin-left: 10vw;
+    margin-top: 50px;
+
+}
+
+#submit{
+    position: relative;
+    bottom: 37px;
+    margin-left: 43vw;
+}
+
