@@ -22,8 +22,7 @@ I use a free host service for hosting this website. You can visit this link and 
 
 https://ogpvtltd.000webhostapp.com/
 
-============================================
+
 Sanjeewa Rupasinghe
 linkedin.com/in/sanjeewaxy 
 github.com/SanjeewaRupasinghe 
-============================================
